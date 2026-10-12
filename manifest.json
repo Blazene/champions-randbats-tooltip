@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Champions Randbats Tooltip",
+  "version": "0.7.0",
+  "description": "Adds Champions random battle role-specific movepools directly to Pok\u00e9mon Showdown native hover tooltips.",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://play.pokemonshowdown.com/*",
+        "https://*.psim.us/*"
+      ],
+      "js": [
+        "sets-data.js",
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}

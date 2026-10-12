@@ -1,0 +1,81 @@
+/* Limit the overall tooltip to the viewport and allow scrolling when needed. */
+#tooltipwrapper .tooltip:has(.champions-sets-inline),
+.tooltipwrapper .tooltip:has(.champions-sets-inline),
+.tooltip:has(.champions-sets-inline) {
+  box-sizing: border-box !important;
+  width: min(300px, calc(100vw - 24px)) !important;
+  min-width: 0 !important;
+  max-width: calc(100vw - 24px) !important;
+  max-height: calc(100vh - 24px) !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  overscroll-behavior: contain;
+  background: #f0f0f0 !important;
+  color: #111 !important;
+}
+.tooltip .champions-sets-inline {
+  box-sizing: border-box;
+  border-top: 1px solid #999;
+  padding: 3px 10px 9px;
+  color: #111;
+  font: inherit;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
+.tooltip .champions-sets-inline .champions-title {
+  font-size: 1em; font-weight: bold; margin: 0 0 4px;
+}
+.tooltip .champions-sets-inline .champions-meta {
+  margin: 0 0 7px; color: #555; font-size: .9em;
+}
+.tooltip .champions-sets-inline .champions-role {
+  border-top: 1px solid #bbb; padding-top: 7px; margin-top: 7px;
+}
+.tooltip .champions-sets-inline .champions-role h4 {
+  font-size: 1em; font-weight: bold; margin: 0 0 5px;
+  text-decoration: underline;
+}
+.tooltip .champions-sets-inline .champions-role p {
+  margin: 3px 0; line-height: 1.35;
+}
+.tooltip .champions-sets-inline .champions-note {
+  margin: 8px 0 0; font-size: .8em; color: #555; font-style: italic;
+}
+
+/* Keep the native Showdown tooltip and our additions equally narrow. */
+#tooltipwrapper:has(.champions-sets-inline),
+.tooltipwrapper:has(.champions-sets-inline) {
+  max-width: min(300px, calc(100vw - 24px)) !important;
+}
+.tooltip:has(.champions-sets-inline) > * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.tooltip .champions-sets-inline .champions-role p {
+  overflow-wrap: anywhere;
+}
+
+/* v0.7 compact layout: smaller text and tighter spacing only in added sets. */
+.tooltip .champions-sets-inline {
+  padding: 2px 7px 5px !important;
+  font-size: 0.83em !important;
+  line-height: 1.17 !important;
+}
+.tooltip .champions-sets-inline .champions-role {
+  padding-top: 4px !important;
+  margin-top: 4px !important;
+}
+.tooltip .champions-sets-inline .champions-role h4 {
+  margin: 0 0 2px !important;
+  font-size: 1em !important;
+  line-height: 1.18 !important;
+}
+.tooltip .champions-sets-inline .champions-role p {
+  margin: 1px 0 !important;
+  line-height: 1.22 !important;
+}
+.tooltip .champions-sets-inline .champions-note {
+  margin: 4px 0 0 !important;
+  font-size: .76em !important;
+  line-height: 1.2 !important;
+}
